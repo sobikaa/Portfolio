@@ -161,6 +161,16 @@ h2 {
         padding: 4rem 2.5rem;
     }
 
+    .about-intro {
+        gap: 0.5rem;  /* Reduced from 1rem */
+        margin-bottom: 4rem;
+    }
+
+
+    .about-image img {
+        margin-top: 1.5rem;  /* Reduced from 4rem */
+    }
+
     h2 {
         font-size: 0.9rem;
     }
@@ -170,11 +180,11 @@ h2 {
     }
 
     .education-item,
-    .experience-item {
+    .experience-item,
+    .job-title {
         font-size: 0.8rem;
     }
 
-    .job-title,
     .year,
     .duration {
         font-size: 0.7rem;
@@ -183,5 +193,9 @@ h2 {
     .resume-button {
         font-size: 0.7rem;
         padding: 0.5rem 1.2rem;
+    }
+
+    .experience-item {
+        margin-bottom: 1.5rem;
     }
 } 
