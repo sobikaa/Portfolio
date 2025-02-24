@@ -1,0 +1,722 @@
+/* Project Page Styles */
+.project {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 7rem 2rem 4rem;
+    color: white;
+    background-color: #110e0e;
+}
+
+.project-header {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.project-header h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.project-header h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: #999;
+}
+
+.project-header p {
+    font-size: 1.2rem;
+    color: #999;
+    max-width: 800px;
+}
+
+/* Project Info Grid */
+.project-info-grid {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+}
+
+.project-info-left {
+    margin-top: 2rem;
+    flex: 0 0 300px;
+}
+
+.project-info-right {
+    flex: 1;
+    max-height: 600px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.project-info-right img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+}
+
+.info-item h3 {
+    font-size: 0.9rem;
+    color: #656565;
+    margin-bottom: 0.1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.info-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #c5c5c5;
+}
+
+/* Project Content */
+.project-content {
+    max-width: 100%;
+    align-items: left;
+}
+
+.project-section {
+    margin-bottom: 4rem;
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.project-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #999;
+    font-weight: 500;
+    min-width: 200px;  /* Fixed width for headers */
+    margin: 0;  /* Remove default margin */
+}
+
+.project-section-content {
+    flex: 1;  /* Take up remaining space */
+}
+
+.project-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cfcfcf;
+    margin-bottom: 1.5rem;
+}
+
+.project-section p1 {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #656565;
+    margin-bottom: 1.5rem;
+}
+
+/* Image Grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Process Section */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    margin: 2rem 0;
+}
+
+.process-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.process-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.process-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+}
+
+/* Outcomes Grid */
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.outcome-item {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.outcome-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+/* Project Navigation */
+.project-nav {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.nav-arrow {
+    width: 50px;
+    height: 100px; /* Double the width for half circle */
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    position: relative;
+}
+
+.nav-arrow.prev {
+    border-radius: 0 60px 60px 0; /* Half circle on right side */
+    background: rgba(40, 40, 40, 0.9);
+    justify-content: flex-end;
+    padding-right: 1.5rem;
+    left: 0;
+}
+
+.nav-arrow.next {
+    border-radius: 60px 0 0 60px; /* Half circle on left side */
+    background: rgba(40, 40, 40, 0.9);
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+    right: 0;
+}
+
+.nav-arrow:hover {
+    background: rgba(60, 60, 60, 0.95);
+}
+
+.nav-arrow svg {
+    width: 50px;
+    height: 50px;
+    stroke-width: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .process-grid,
+    .outcomes-grid,
+    .image-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-nav {
+        padding: 0 1rem;
+    }
+
+    .nav-arrow {
+        width: 45px;
+        height: 90px;
+    }
+    
+    .nav-arrow.prev {
+        border-radius: 0 45px 45px 0;
+        padding-right: 1rem;
+    }
+    
+    .nav-arrow.next {
+        border-radius: 45px 0 0 45px;
+        padding-left: 1rem;
+    }
+    
+    .nav-arrow svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .project-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .project-section h2 {
+        min-width: unset;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .project {
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    .project-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-info-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .project-info-left,
+    .project-info-right {
+        width: 100%;
+    }
+
+    .project-info-right {
+        max-height: 400px;
+    }
+}
+
+/* Add these styles to your project.css */
+.list-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+}
+
+.list-item::before {
+    content: '';
+    min-width: 6px;
+    height: 6px;
+    background-color: #656565;
+    border-radius: 50%;
+    margin-top: 0.8rem;
+    margin-left: -1.5rem;
+}
+
+/* For nested lists */
+.list-item.nested {
+    margin-left: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.list-item.nested::before {
+    width: 4px;
+    height: 4px;
+    background-color: #454545;
+}
+
+/* For findings/insights sections */
+.insight-list {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* <p>• </p> */
+
+.project-section.fusemachines h2 {
+    color: #0c2ce1;  /* You can change this color to match your preference */
+}
+
+/* Additional Process Styling */
+.process-icon {
+    width: 120px;
+    height: 120px;
+    background-color: #4A90E2;  /* Blue for first process */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.process-item:hover .process-icon {
+    transform: translateY(-5px);
+}
+
+/* Connecting lines between process items */
+.process-steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+/* Remove or comment out this section that was creating the line */
+/* .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 150px;
+    right: 150px;
+    height: 2px;
+    background: rgba(74, 144, 226, 0.3);
+    z-index: -1;
+} */
+
+@media (max-width: 768px) {
+    .process-steps::before {
+        display: none;  /* Hide connecting line on mobile */
+    }
+}
+
+/* Design Process Section Styling */
+.design-process-section {
+    background-color: #06076e;
+    padding: 5rem 0;
+    margin: 4rem calc(-50vw + 50%);
+    position: relative;
+    width: 100vw;
+    left: 63%;
+    transform: translateX(-50%);
+    overflow-x: hidden;
+}
+
+.design-process-section h2 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 7rem;
+}
+
+.design-process-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;  /* Include padding in width calculation */
+    width: 100%;  /* Ensure full width */
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.process-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.process-icon {
+    width: 140px;
+    height: 140px;
+    background-color: rgba(255, 255, 255, 0.172);  /* Light transparent white */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.process-icon img {
+    width: 70px;
+    height: 70px;
+    filter: brightness(0) invert(1);  /* Makes icon white */
+    margin-bottom: 1.5rem;
+}
+
+.process-title {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+   
+}
+
+.process-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .process-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .design-process-section {
+        padding: 4rem 0;
+    }
+}
+
+.persona-section {
+    background-color: #8393a6;
+    padding: 2rem 2rem;
+    margin: 1rem calc(-50vw + 50%);
+    position: relative;
+    width: 100vw;
+    left: 63%;
+    transform: translateX(-50%);
+    overflow-x: hidden;
+}
+
+
+/* Update container to work with new box */
+.persona-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.persona-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 0.6rem;  /* Reduced gap */
+    max-width: 600px;  /* Reduced overall width */
+}
+
+/* Offset positioning */
+
+
+/* Card Styles - Reduced sizes */
+.persona-goals, .persona-traits, .persona-details, .persona-painpoints {
+    background: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+/* Grid Positions remain the same */
+.persona-goals {
+    grid-column: 1;
+    grid-row: 1;
+    height: 135px;
+    margin-top: 1rem;
+}
+
+.persona-traits {
+    grid-column: 1;
+    grid-row: 2;
+    height: 125px;
+}
+
+.persona-main {
+    margin-top: 4rem;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    height: 205px;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.persona-details {
+    margin-top: 2rem;
+    grid-column: 3;
+    grid-row: 1;
+    height: 125px;
+}
+
+.persona-painpoints {
+    grid-column: 3;
+    grid-row: 2;
+    height: 120px;
+}
+
+/* Reduced sizes for elements */
+.persona-avatar {
+    width: 80px;  /* Smaller avatar */
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    background: #357ABD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;  /* Smaller font */
+    font-weight: 500;
+    color: white;
+}
+
+.persona-name {
+    color: rgb(0, 0, 0);
+    font-size: 1rem;  /* Smaller font */
+    margin-bottom: 0.4rem;
+}
+
+.persona-title {
+    color: #357ABD;
+    font-size: 0.8rem;  /* Smaller font */
+}
+
+.card-header {
+    color: #357ABD;
+    margin-bottom: 0.6rem;  /* Reduced margin */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+}
+
+.card-list li {
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 0.4rem;
+    font-size: 0.5rem;  /* Smaller font */
+    line-height: 1.3;
+}
+
+.trait-tags {
+    gap: 0.3rem;
+}
+
+.trait-tag {
+    background: #357ABD;
+    color: white;
+    padding: 0.2rem 0.5rem;  /* Smaller padding */
+    border-radius: 16px;
+    font-size: 0.6rem;  /* Smaller font */
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .persona-content {
+        grid-template-columns: 1fr;
+        margin: 0 auto !important;  /* Override offset on mobile */
+    }
+
+    .persona-main,
+    .persona-goals,
+    .persona-traits,
+    .persona-details,
+    .persona-painpoints {
+        grid-column: 1;
+    }
+
+    .persona-main {
+        grid-row: 1;
+    }
+
+    .persona-goals {
+        grid-row: 2;
+    }
+
+    .persona-traits {
+        grid-row: 3;
+    }
+
+    .persona-details {
+        grid-row: 4;
+    }
+
+    .persona-painpoints {
+        grid-row: 5;
+    }
+}
+
+/* Portfolio Grid Layout */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    background: none;
+    border: none;
+}
+
+/* Large project card */
+.project-card.large {
+    grid-column: span 8;
+    aspect-ratio: 16/9;
+}
+
+/* Medium project card */
+.project-card.medium {
+    grid-column: span 6;
+    aspect-ratio: 4/3;
+}
+
+/* Small project card */
+.project-card.small {
+    grid-column: span 4;
+    aspect-ratio: 3/4;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    margin-top: 1rem;
+}
+
+.project-info h3 {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        gap: 1.5rem;
+    }
+
+    .project-card.large,
+    .project-card.medium,
+    .project-card.small {
+        grid-column: 1 / -1;  /* Full width on mobile */
+    }
+}
+
+
+
+/* Rest of the styles remain the same */

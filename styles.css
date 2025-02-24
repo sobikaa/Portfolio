@@ -1,0 +1,662 @@
+/* ====== Root Variables ====== */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #999;
+    --accent-color: #ffffff;
+    --background-color: #110e0e;
+    --border-color: #333;
+    --header-font: "Montserrat", sans-serif;
+    --body-font: "Montserrat", sans-serif;
+}
+
+/* ====== Global Reset & Base Styles ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: #110e0e;
+    position: relative;
+    line-height: 1.7;
+}
+
+/* ====== Navigation Bar ====== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 4rem;  /* Increased padding top/bottom from 0.4rem to 1.2rem */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #110e0e;
+    backdrop-filter: blur(5px);
+    border-bottom: none;
+    z-index: 1000;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 16px;  /* Slightly reduced height */
+    cursor: pointer;
+    z-index: 1001;
+    margin-top: 1rem;  /* Add margin to align with logo */
+    margin-left: 1rem;  /* Add some space from the left edge */
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #999;
+    transition: transform 0.3s ease, opacity 0.3s ease;  /* Separate transitions */
+    transform-origin: center;  /* Set transform origin to center */
+}
+
+.logo {
+    text-decoration: none;
+    transform-origin: left center;
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.logo img {
+    height: 70px;  /* Slightly increased logo size to match taller navbar */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 5rem;
+    transform-origin: right center;
+}
+
+.nav-links a {
+    font-family: var(--body-font);
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+/* ====== Hero Section ====== */
+.hero {
+    min-height: 80vh;  /* Relative to viewport height */
+    padding: 4rem 2rem 1rem;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+    opacity: 1;
+    transform: none;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 520px;
+    min-width: 300px;
+    padding-top: 6rem;
+    margin-left: 3rem;
+}
+
+.hero-text h1 {
+    margin-top: 1rem;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-weight: 400;
+}
+
+.hero-text p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--secondary-color);
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 495px;
+    height: 550px;
+    margin-top: 0;
+    margin-right: 5rem;
+    background-color: #110e0e; /* Match background color */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: transform; /* Optimize for animations */
+    backface-visibility: hidden; /* Prevent flickering */
+    -webkit-backface-visibility: hidden;
+}
+
+/* ====== Skills Section ====== */
+.skills {
+    padding: 1rem 0;
+    background-color: #191818;
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.skills-container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 2rem;
+}
+
+/* Add margin between the two tracks */
+#skills-track-reverse {
+    margin-top: 0.8rem;
+}
+
+.skill-item {
+    font-family: var(--body-font);
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    color: #b7b7b7;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+}
+
+.separator {
+    color: #666;
+    font-size: 0.7rem;
+}
+
+/* ====== Media Queries ====== */
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 1rem 4rem;  /* Slightly reduced padding */
+        transform: scale(0.95);
+        transform-origin: top center;
+    }
+    .hero-content {
+        transform: scale(0.85);  /* Scale everything down proportionally */
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .hero-image {
+        max-width: 450px;
+        height: 437px;
+    }
+
+
+/*
+    .hero-text {
+        padding-left: 4.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .hero-image {
+        max-width: 450px;
+        height: 437px;
+    }*/
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem;  /* Adjust padding */
+        align-items: flex-start;  /* Align items to top */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;  /* Start from top */
+        left: 0;
+        width: 100%;
+        height: auto;  /* Auto height */
+        padding: 4rem 0 1.5rem;  /* Add padding top to account for navbar height */
+        background-color: var(--background-color);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);  /* Scale instead of translate */
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+
+    .hero {
+        padding: 4rem 1rem 1rem;
+        min-height: 60vh;
+    }
+
+    .hero-content {
+        transform: scale(0.8);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+        width: 130%;
+        margin-left: -15%;
+    }
+
+    .hero-text {
+        margin-left: 0;
+        padding-top: 2rem;
+        min-width: 100px;
+        flex: 1;
+    }
+
+    .hero-text h1 {
+        margin-bottom: 0.8rem;
+        line-height: 1.2;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+
+    .hero-image {
+        flex: 1;
+        max-width: 280px;
+        height: 310px;
+        margin-right: 0;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: auto;  /* Let height adjust to content */
+        padding: 3rem 1rem 1rem;
+        max-width: 100%;
+    }
+
+    .hero-content {
+        transform: scale(0.4);
+        gap: 0;
+        width: 140%;  /* Adjust overall width */
+        
+    }
+
+    .hero-text {
+        min-width: 80px;  /* Reduced from 100px */
+        max-width: 120px;  /* Add max-width constraint */
+        padding-top: 0.5rem;
+        margin-left: 6rem;  /* Reduced from 5rem */
+       
+    }
+
+    .hero-text h1 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        white-space: nowrap;  /* Prevent text wrapping */
+    }
+
+    .hero-text p {
+        font-size: 0.5rem;
+        white-space: nowrap;  /* Prevent text wrapping */
+    }
+
+    .hero-image {
+        max-width: 160px;
+        height: 190px;
+        margin-right: 7rem;  /* Add margin to balance the layout */
+    }
+
+    .skills {
+        padding: 0.5rem 0;
+    }
+    
+    .skills-container {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        gap: 1rem;
+    }
+    
+    /* Add margin between the two tracks */
+    #skills-track-reverse {
+        margin-top: 0.3rem;
+    }
+    
+    .skill-item {
+        font-family: var(--body-font);
+        font-weight: 400;
+        font-size: 0.7rem;
+        padding: 0.3rem 0;
+    }
+    
+    .separator {
+        font-size: 0.5rem;
+    }
+
+    .portfolio h2 {
+        margin-left: 1%;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+/*
+    .hero-content {
+        gap: 0.25rem;
+    }
+
+    .navbar {
+        padding: 0.3rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .portfolio {
+        padding: 2rem 1rem;
+    }
+
+    .portfolio-grid {
+        max-width: 95%;
+    }
+
+    .project-image {
+        height: 200px;
+    }*/
+}
+
+@font-face {
+    font-family: 'Chomsky';
+    src: url('fonts/Chomsky.woff') format('woff');
+    src: url('fonts/Chomsky.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+/* Footer */
+footer {
+    padding: 1.5rem 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright {
+    font-size: 1rem;
+    color: #656565;
+    font-weight: 400;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.75rem;
+}
+
+.social-links img {
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover img {
+    opacity: 0.7;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .copyright {
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    .social-links img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 1.5rem 1rem;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+        margin-left: 1rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-links img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 6rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.portfolio h2 {
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+    color: white;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 6%;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Project Cards */
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card.large {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 1600px;
+    height: 400px;
+    margin: 0 auto 0.5rem;
+}
+
+.project-card.large .project-image {
+    aspect-ratio: 16/9;
+    
+}
+
+.project-card.medium .project-image {
+    aspect-ratio: 16/9;
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.project-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: none;
+    transition: none;
+}
+
+.project-card:hover .project-image video {
+    transform: none;
+}
+
+/* Project Info */
+.project-info {
+    
+    padding-left: 0.5rem;
+    /*background: rgba(40, 40, 40, 0.8);*/
+    
+}
+
+.project-info p {
+    color: white;
+    font-size: 0.9rem;
+    
+}
+
+.project-category {
+    color: #656565;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        width: 95%;
+        gap: 2rem;
+    }
+}
+
+/* Update the existing hover styles */
+@media (min-width: 769px) {
+    /* Only apply hover effects on larger screens */
+    .project-image video {
+        filter: grayscale(80%);
+        transition: all 0.4s ease;
+    }
+
+    .project-card:hover .project-image video {
+        filter: grayscale(0%);
+        transform: scale(1.03);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Remove filter and transition for mobile */
+    .project-image video {
+        filter: none;
+        transition: none;
+    }
+
+    .project-card:hover .project-image video {
+        transform: none;
+    }
+}
+
