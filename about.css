@@ -34,7 +34,7 @@
 }
 
 .education-item, .experience-item {
-    margin-top: -1rem;
+    margin-top: 0.8rem;
     margin-bottom: 1.5rem;
     font-weight: 300;
     font-size: 1rem;
@@ -76,8 +76,8 @@
 /* Section Headers */
 h2 {
     font-size: 1.3rem;
-    margin-bottom: 1.8rem;
-    color: rgb(196, 196, 196);
+    margin-bottom: 0.7rem;
+    color: rgb(128, 127, 127);
     font-weight: 400;
 }
 
@@ -104,7 +104,7 @@ h2 {
 
     h2 {
         font-size: 1rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 0.8rem;
     }
 
     .about-content p,
@@ -136,7 +136,9 @@ h2 {
     }
 
     h2 {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        
     }
 
     .about-content p,
@@ -144,6 +146,11 @@ h2 {
     .experience-item,
     .job-title {
         font-size: 0.8rem;
+    }
+
+    .education-item,
+    .experience-item {
+        margin-top: 0.1rem;
     }
 
     .year,
