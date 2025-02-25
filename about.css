@@ -2,9 +2,8 @@
 
 .about {
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
     padding: 6rem 4rem;
-    margin-top: 2rem;
 }
 
 /* 1. About Section */
@@ -25,54 +24,32 @@
     width: 100%;
     height: auto;
     border-radius: 4px;
-    margin-left: 0;
     margin-top: 4rem;
 }
 
 /* 2. Education Section */
-.education {
+.education, .experience {
     color: white;
     margin-bottom: 3.5rem;
 }
 
-.education-item {
+.education-item, .experience-item {
     margin-top: -1rem;
     margin-bottom: 1.5rem;
     font-weight: 300;
     font-size: 1rem;
 }
 
-.year {
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: white;
-}
-
-/* 3. Experience Section */
-.experience {
-    margin-bottom: 2.2rem;
-    color: white;
-}
-
 .experience-item {
-    margin-top: -1rem;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
     font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
 }
 
-.job-title {
+.job-title, .year, .duration {
     font-weight: 300;
-    font-size: 1rem;
-    color: white;
-}
-
-.duration {
-    color: var(--secondary-color);
     font-size: 0.9rem;
     color: white;
-    font-weight: 300;
 }
 
 /* 5. Resume Button */
@@ -81,12 +58,11 @@
     margin-top: 1rem;
     padding: 0.8rem 2rem;
     background-color: transparent;
-    color: #999;
+    color: var(--secondary-color);
     text-decoration: none;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 0.9rem;
-    font-weight: 400;
     letter-spacing: 0.05em;
     transition: all 0.3s ease;
 }
@@ -117,31 +93,24 @@ h2 {
     }
 
     .about-image {
-        order: 1;  /* Move image after text */
+        order: 1;
         max-width: 250px;
         margin: 0 auto;
     }
 
     .about-content {
-        order: 0;  /* Move text before image */
-
+        order: 0;
     }
 
-    /* Reduce text sizes */
     h2 {
         font-size: 1rem;
         margin-bottom: 1.2rem;
     }
 
-    .about-content p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-
+    .about-content p,
     .education-item,
     .experience-item {
         font-size: 0.9rem;
-        margin-bottom: 1rem;
     }
 
     .job-title,
@@ -157,28 +126,20 @@ h2 {
 }
 
 @media (max-width: 480px) {
-    .about {
-        padding: 4rem 2.5rem;
-    }
-
     .about-intro {
-        gap: 0.5rem;  /* Reduced from 1rem */
+        gap: 0.5rem;
         margin-bottom: 4rem;
     }
 
-
     .about-image img {
-        margin-top: 1.5rem;  /* Reduced from 4rem */
+        margin-top: 1.5rem;
     }
 
     h2 {
         font-size: 0.9rem;
     }
 
-    .about-content p {
-        font-size: 0.8rem;
-    }
-
+    .about-content p,
     .education-item,
     .experience-item,
     .job-title {
@@ -193,9 +154,5 @@ h2 {
     .resume-button {
         font-size: 0.7rem;
         padding: 0.5rem 1.2rem;
-    }
-
-    .experience-item {
-        margin-bottom: 1.5rem;
     }
 } 
