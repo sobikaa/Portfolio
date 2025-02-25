@@ -149,6 +149,7 @@ body {
     margin-top: 0;
     margin-right: 5rem;
     background-color: #110e0e; /* Match background color */
+    will-change: transform;  
 }
 
 .hero-image img {
