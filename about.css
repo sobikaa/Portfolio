@@ -161,5 +161,6 @@ h2 {
     .resume-button {
         font-size: 0.7rem;
         padding: 0.5rem 1.2rem;
+        margin-top: 0;
     }
 } 
