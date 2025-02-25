@@ -7,6 +7,12 @@
     <link rel="icon" href="pics/logo/sign.jpg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="project.css">
+    <link 
+        rel="preload" 
+        href="pics/portraits/landingpage.png" 
+        as="image" 
+        fetchpriority="high"
+        type="image/png">
     <!-- Combining font requests into one to reduce HTTP requests -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=UnifrakturMaguntia&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
 </head>
@@ -38,7 +44,11 @@
                     <p>I design intuitive user-centric solutions<br>one pixel at a time.</p>
                 </div>
                 <div class="hero-image">
-                    <img src="pics/portraits/landingpage.png" alt="Sobika Portrait" loading="lazy">
+                    <img src="pics/portraits/landingpage.png" 
+                         alt="Sobika Portrait" 
+                         fetchpriority="high"
+                         loading="eager"
+                         decoding="sync">
                 </div>
             </div>
         </section>
