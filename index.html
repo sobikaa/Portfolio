@@ -13,23 +13,16 @@
         as="image" 
         fetchpriority="high"
         type="image/png">
-    <!-- Combining font requests into one to reduce HTTP requests -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=UnifrakturMaguntia&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="logo">
             <img src="pics/logo/sign.jpg" alt="ST Logo" loading="lazy">
         </a>
-        
-        <!-- Hamburger menu button -->
         <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
-
-        <!-- Navigation links -->
         <div class="nav-links">
             <a href="about.html">About</a>
             <a href="mailto:sobikajthapa@gmail.com">Contact</a>
@@ -49,17 +42,16 @@
                          fetchpriority="high"
                          loading="eager"
                          decoding="sync">
+                    <div class="image-popup">
+                        <p>PS: I created this website from scratch to show off my coding skills.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="skills">
-            <div class="skills-container" id="skills-track">
-                <!-- First skills track -->
-            </div>
-            <div class="skills-container" id="skills-track-reverse">
-                <!-- Second skills track (reverse) -->
-            </div>
+            <div class="skills-container" id="skills-track"></div>
+            <div class="skills-container" id="skills-track-reverse"></div>
         </section>
 
         <section class="portfolio">
@@ -142,7 +134,6 @@
                 </div>
             </div>
         </footer>
-
     </main>
 
     <script src="script.js"></script>
