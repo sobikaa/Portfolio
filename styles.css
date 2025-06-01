@@ -72,6 +72,7 @@ body {
 .nav-links {
     display: flex;
     gap: 5rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -83,6 +84,20 @@ body {
 }
 
 .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links .scroll-link {
+    cursor: pointer;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.nav-links .scroll-link:hover {
     color: var(--primary-color);
 }
 
@@ -571,6 +586,7 @@ footer {
 .portfolio {
     padding: 6rem 2rem;
     border-bottom: 1px solid var(--border-color);
+    scroll-margin-top: 100px; /* This ensures the section doesn't get hidden behind the fixed navbar */
 }
 
 .portfolio h2 {
@@ -659,6 +675,11 @@ footer {
         width: 95%;
         gap: 2rem;
     }
+
+    .portfolio h2 {
+        margin-left: 1rem;
+        font-size: 1.2rem;
+    }
 }
 
 /* Update the existing hover styles */
@@ -726,5 +747,248 @@ footer {
     transform: translateY(-50%) translateX(-30px);
 }
 
+.visitor-counter {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    margin: 1rem 0;
+}
+
+/* Design Process Section - Base Styles */
+.design-process {
+    padding: 5rem 2rem;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.process-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.design-process h2 {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    margin-left: 1.5rem;
+    text-align: left;
+}
+
+/* Timeline - Base Styles */
+.timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - (100% / 6));
+    height: 1px;
+    background: #716f6f;
+    top: 50%;
+    left: calc(100% / 12);
+    transform: translateY(-50%);
+}
+
+.timeline-step {
+    position: relative;
+    width: calc(100% / 6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Dot and Lines - Base Styles */
+.timeline-step::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #716f6f;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-step::before {
+    content: '';
+    position: absolute;
+    width: 1.5px;
+    height: 1.5rem;
+    background: #716f6f;
+    top: 50%;
+}
+
+.timeline-step.top::before {
+    transform: translateY(-100%);
+}
+
+/* Content Styles */
+.content {
+    text-align: center;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-step.top .content {
+    margin-bottom: 13rem;
+}
+
+.timeline-step.bottom .content {
+    margin-top: 13rem;
+}
+
+.icon {
+    font-size: 24px;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline-step h3 {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.timeline-step p {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    line-height: 1.4;
+}
+
+/* Tablet and Mobile Styles */
+@media (max-width: 768px) {
+    .design-process {
+        padding: 3rem 2rem;  /* Reduced padding */
+    }
+
+    .design-process h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;  /* Reduced margin */
+        margin-left: 0.5rem;
+        text-align: left;
+    }
+
+    .timeline {
+
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px 0;  /* Reduced padding */
+    }
+
+    /* Vertical center line */
+    .timeline::after {
+        width: 1px;
+        height: calc(100% - 40px);  /* Adjusted for reduced padding */
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+    }
+
+    .timeline-step {
+        width: 100%;
+        min-height: 70px;  /* Reduced from 90px to decrease vertical gap */
+        margin: 8px 0;  /* Reduced from 10px */
+        display: flex;
+        align-items: center;
+    }
+
+    /* Horizontal connecting lines */
+    .timeline-step.top::before {
+        width: 35px;
+        height: 1.5px;
+        top: 50%;
+        right: 50%;  /* Position from center */
+    }
+
+    .timeline-step.bottom::before {
+        width: 35px;
+        height: 1.5px;
+        top: 50%;
+        left: 50%;  /* Position from center */
+    }
+
+    /* Content positioning */
+    .content {
+        position: absolute;
+        width: 40%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+    }
+
+    .timeline-step.top .content {
+        right: 60%;  /* Reduced from 60% to bring closer to line */
+        margin: 0;
+    }
+
+    .timeline-step.bottom .content {
+        left: 60%;  /* Reduced from 60% to bring closer to line */
+        margin: 0;
+    }
+
+    /* Text styles - reduced sizes */
+    .timeline-step h3 {
+        font-size: 0.85rem;  /* Smaller */
+        margin-bottom: 0.2rem;  /* Reduced */
+        text-align: center;
+    }
+
+    .timeline-step p {
+        font-size: 0.75rem;  /* Smaller */
+        line-height: 1.2;  /* Tighter */
+        text-align: center;
+    }
+
+    .icon {
+        font-size: 18px;  /* Slightly smaller */
+        margin-bottom: 0.3rem;  /* Reduced */
+    }
+}
+
+/* Mobile refinements */
+@media (max-width: 480px) {
+    .timeline {
+        padding: 15px 0;  /* Further reduced */
+    }
+
+    .design-process h2 {
+        font-size: 1rem;
+    }
+
+    .timeline-step {
+        min-height: 60px;  /* Reduced from 80px */
+        margin: 6px 0;  /* Reduced from 8px */
+    }
+
+    .timeline-step.top::before,
+    .timeline-step.bottom::before {
+        width: 25px;  /* Shorter line for mobile */
+    }
+
+    /* Text styles - even smaller for mobile */
+    .timeline-step h3 {
+        font-size: 0.8rem;
+    }
+
+    .timeline-step p {
+        font-size: 0.7rem;
+    }
+
+    .icon {
+        font-size: 16px;
+        margin-bottom: 0.2rem;
+    }
+}
 
 
